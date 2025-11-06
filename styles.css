@@ -255,19 +255,41 @@ body {
 
 .cat-img {
   position: absolute;
-  bottom: 24px;
-  right: 24px;
-  width: 180px;
-  height: 140px;
+  bottom: 20px;
+  right: 20px;
+  width: 260px;               /* diperbesar */
+  height: 200px;              /* diperbesar */
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 12px;
   background: #f8f8f8;
-  padding: 16px;
-  transition: transform 0.3s ease;
+  padding: 12px;
+  transition: transform 0.35s cubic-bezier(.2,.9,.2,1), box-shadow 0.35s ease;
+  box-shadow: 0 6px 18px rgba(17,24,39,0.06);
 }
 
 .cat.card:hover .cat-img {
-  transform: scale(1.05);
+  transform: translateY(-6px) scale(1.03);
+}
+
+/* Responsive adjustments supaya tidak melebihi layar */
+@media (max-width:900px) {
+  .cat-img {
+    width: 200px;
+    height: 150px;
+    bottom: 18px;
+    right: 18px;
+  }
+}
+
+@media (max-width:520px) {
+  .cat-img {
+    position: static;   /* pindah jadi flow normal di mobile */
+    width: 100%;
+    height: auto;
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 12px;
+  }
 }
 
 /* Products */
